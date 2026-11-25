@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gmingok",
+  "compatibility_date": "2026-11-01",
+  // 純靜態網站：public 資料夾裡的檔案直接上線，不需要建置
+  "assets": { "directory": "./public" }
+  // 網域綁定：Cloudflare 後台 Workers & Pages > gmingok > Settings > Domains & Routes
+}

@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GMING OK｜品牌設計・官網金流・導流行銷・Google 地標</title>
+<meta name="description" content="GMING OK 設計師：品牌設計、官網與綠界金流、IG/Threads 導流行銷、Google 地標。嘉作、一蘆筍風、區塊先生的實際案例。">
+<meta property="og:title" content="GMING OK｜你說一聲，我回你 OK。">
+<meta property="og:description" content="品牌、官網、金流、社群、Google 地標，把想法做成真的能賣的東西。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ededeb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8553a'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='28' fill='white' text-anchor='middle'%3EOK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Noto+Color+Emoji&display=swap">
+<style>
+img{max-width:100%}
+/* Layout: 方格草稿紙。首屏自我介紹＋粒子拼成的第一個 OK（字）→ 往下滑的聊天故事，每句「OK」最後聚成第二個 OK（剪影手）→ 作品集 → 方案 → 流程 → 聯絡。只做亮色一種調子。 */
+:root{
+  --ink:#ededeb;        /* 底：偏白淺灰 */
+  --ink-2:#e4e4e1;
+  --card:#fbfbf9;       /* 紙片白 */
+  --line:#c4c4bf;
+  --grid:#dfdfdb;
+  --paper:#1c1c1b;      /* 主文字 */
+  --mute:#686864;
+  --ok:#e8553a;         /* 品牌橘紅 */
+  --ok-soft:#f08a6a;
+  --green:#4f7a2a;
+  --f-display:"Archivo","Noto Sans TC",system-ui,sans-serif;
+  --f-tc:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --f-emoji:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background-color:var(--ink);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;color:var(--paper);font-family:var(--f-tc);font-size:16px;line-height:1.7;margin:0;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0}
+h1,h2,h3{text-wrap:balance;margin:0}
+:focus-visible{outline:2px solid var(--ok);outline-offset:3px}
+.note{background:var(--ok);color:#fff;font-size:13px;text-align:center;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--ink) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:50;background:var(--ink)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:900;font-size:18px;text-decoration:none}
+.logo b{background:var(--ok);color:#fff;padding:1px 7px;border-radius:4px}
+.links{display:flex;gap:22px;font-size:14px;align-items:center}
+.links a{text-decoration:none;color:var(--mute)}
+.links a:hover{color:var(--paper)}
+@media (max-width:720px){.links a:not(.btn){display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--paper);background:var(--card);transition:transform .2s,background .2s;cursor:pointer;color:var(--paper)}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.primary:hover{background:var(--ok-soft)}
+.links .btn{padding:8px 16px;font-size:13px}
+
+/* ── 首屏：第一個 OK（粒子字） ── */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#field{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:2;padding-block:48px 40px;min-height:min(540px,70svh);display:flex;flex-direction:column;justify-content:center;pointer-events:none}
+.hero .wrap a{pointer-events:auto}
+.hero h1{font-weight:900;font-size:clamp(38px,5.6vw,78px);line-height:1.1;letter-spacing:-.02em;max-width:9.5em}
+.hero h1 em{font-style:normal;color:var(--ok)}
+.lead{color:var(--mute);font-size:clamp(16px,1.6vw,19px);max-width:26em;margin:20px 0 28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hint{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:20px;z-index:2;font-family:var(--f-mono);font-size:11px;color:var(--mute);letter-spacing:.1em;margin:0}
+.path{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 75%,transparent)}
+.path .wrap{padding-block:36px 40px;display:grid;gap:22px}
+.path ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.path ol::before{content:"";position:absolute;left:18px;right:calc(25% - 4px);top:17px;border-top:2px dashed var(--line)}
+.path li{position:relative;display:grid;gap:6px;min-width:0;align-content:start}
+.path .dot{width:36px;height:36px;border-radius:50%;background:var(--card);border:2px solid var(--paper);display:grid;place-items:center;font-family:var(--f-mono);font-size:12px;font-weight:500;position:relative}
+.path li:last-child .dot{background:var(--ok);border-color:var(--ok);color:#fff}
+.path b{font-size:18px;margin-top:6px}
+.path span{color:var(--mute);font-size:14px;line-height:1.5}
+.path .go{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--mute);margin:0}
+.path .go a{color:var(--ok);font-weight:700;text-decoration:none}
+@media (max-width:760px){.path ol{grid-template-columns:1fr;gap:18px}.path ol::before{left:17px;right:auto;top:18px;bottom:18px;border-top:0;border-left:2px dashed var(--line)}.path li{grid-template-columns:36px 1fr;column-gap:14px}.path li b{margin-top:5px}.path li span{grid-column:2}}
+
+/* ── 聊天故事 ── */
+.story{position:relative;height:700vh;border-bottom:1px solid var(--line)}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;grid-template-columns:1fr minmax(0,430px) 1fr;align-items:center;gap:32px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-top:64px}
+.side{min-width:0;align-self:center}
+.side h2{font-weight:900;font-size:clamp(26px,3vw,40px);line-height:1.15;letter-spacing:-.01em}
+.side p{color:var(--mute);font-size:14px;margin:10px 0 0}
+.steps-list{list-style:none;padding:0;margin:0;display:grid;gap:10px;justify-self:end}
+.steps-list li{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--mute);transition:color .3s}
+.steps-list li i{font-style:normal;font-family:var(--f-mono);font-size:11px;font-weight:500;border:1.5px solid var(--line);border-radius:999px;padding:2px 8px;transition:all .3s}
+.steps-list li.on{color:var(--paper)}
+.steps-list li.on i{background:var(--ok);border-color:var(--ok);color:#fff}
+@media (max-width:980px){.stick{grid-template-columns:minmax(0,430px);justify-content:center;padding-top:70px}.side,.steps-list{display:none}}
+.phone{position:relative;height:min(78svh,700px);background:var(--card);border:2px solid var(--paper);border-radius:34px;box-shadow:10px 12px 0 rgba(28,28,27,.12);overflow:hidden;display:flex;flex-direction:column;transition:opacity .3s,transform .3s}
+.phone-top{display:flex;align-items:center;gap:10px;padding:16px 18px 12px;border-bottom:1px solid var(--grid);background:var(--card);position:relative;z-index:2}
+.av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:13px;flex:none}
+.av.farm{background:#dfe8d2;color:var(--green)}
+.phone-top b{display:block;font-size:15px;line-height:1.2}
+.phone-top span{font-size:11px;color:var(--mute)}
+.screen{flex:1;position:relative;overflow:hidden;background:var(--ink-2)}
+.thread{position:absolute;left:0;right:0;top:0;padding:16px 14px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.msg{max-width:84%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.55;opacity:0;transform:translateY(14px) scale(.97);transition:opacity .35s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.msg.show{opacity:1;transform:none}
+.msg.them{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg.me{align-self:flex-end;background:var(--paper);color:var(--ink);border-bottom-right-radius:6px}
+.okw{display:inline-block;background:var(--ok);color:#fff;font-family:var(--f-display);font-weight:900;border-radius:6px;padding:0 6px;margin-right:2px}
+.time{align-self:center;font-family:var(--f-mono);font-size:10px;color:var(--mute);opacity:0;transition:opacity .3s}
+.time.show{opacity:1}
+.rich{align-self:flex-end;width:84%;background:var(--card);border:1.5px solid var(--paper);border-radius:16px;overflow:hidden;padding:0}
+.rich .cap{padding:8px 12px;font-size:12px;color:var(--mute);border-top:1px solid var(--grid)}
+.rich .cap b{color:var(--paper)}
+.r-brand{padding:22px 16px;display:flex;align-items:baseline;gap:12px;background:#f1f4ec}
+.r-brand strong{font-size:42px;font-weight:900;color:var(--green);line-height:1}
+.r-brand span{font-size:12px;color:var(--mute)}
+.r-site{padding:12px;display:grid;gap:8px;background:#f6f3ec}
+.r-site .url{font-family:var(--f-mono);font-size:10px;color:#6b6356}
+.r-site .h{font-weight:900;font-size:19px;line-height:1.15;color:#1d2a14}
+.r-site .paid{justify-self:start;font-size:11px;font-weight:700;background:#dfe8d2;color:var(--green);border-radius:999px;padding:2px 10px}
+.r-reel{aspect-ratio:16/10;background:linear-gradient(160deg,#9cc46a,#3e6b22);position:relative;color:#fff;display:flex;align-items:flex-end;padding:12px}
+.r-reel::before{content:"▶";position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.3);display:grid;place-items:center;font-size:16px}
+.r-reel strong{font-family:var(--f-display);font-size:24px;font-weight:900;line-height:1}
+.r-reel span{font-size:11px;display:block}
+.r-map{height:110px;position:relative;background:#e9efe6 repeating-linear-gradient(35deg,transparent 0 22px,#dbe3d6 22px 25px)}
+.r-map::after{content:"";position:absolute;left:44%;top:22%;width:30px;height:30px;background:var(--ok);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:3px 3px 0 rgba(0,0,0,.15)}
+.r-map span{position:absolute;left:56%;top:26%;background:var(--card);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.sticker{align-self:flex-end;font-family:var(--f-emoji);font-size:64px;line-height:1;background:none;padding:0}
+#okfield{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.finale{position:absolute;left:0;right:0;bottom:7svh;z-index:6;text-align:center;opacity:0;transition:opacity .4s;padding-inline:20px}
+.finale.show{opacity:1}
+.finale h2{font-weight:900;font-size:clamp(24px,3.4vw,44px);line-height:1.2}
+.finale p{color:var(--mute);margin:8px 0 0}
+.scroll-cue{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-family:var(--f-mono);font-size:11px;color:var(--mute);letter-spacing:.12em;z-index:6;transition:opacity .3s}
+
+/* ── 作品集 ── */
+section.blk{padding-block:96px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.sec-head h2{font-weight:900;font-size:clamp(30px,4.4vw,56px);line-height:1.12;letter-spacing:-.02em}
+.sec-head p{color:var(--mute);max-width:26em;margin:0}
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.work{grid-column:span 6;background:var(--card);border:1.5px solid var(--paper);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .25s,box-shadow .25s}
+.work:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:8px 10px 0 rgba(28,28,27,.12)}
+.work.big{grid-column:span 12;display:grid;grid-template-columns:1.1fr 1fr}
+@media (max-width:860px){.work,.work.big{grid-column:span 12;grid-template-columns:1fr}}
+.work .vis{min-height:240px;position:relative;overflow:hidden;min-width:0}
+.work .txt{padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.work .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--ok)}
+.work h3{font-size:clamp(24px,2.6vw,32px);font-weight:900;line-height:1.15}
+.work p{color:var(--mute);margin:0;font-size:15px}
+.work ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.work li{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.stat{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:auto}
+.stat strong{font-family:var(--f-display);font-weight:900;font-size:clamp(34px,4vw,52px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat span{color:var(--mute);font-size:13px}
+.work .more{font-weight:700;font-size:14px;text-decoration:none;border-bottom:1.5px solid var(--ok);align-self:flex-start}
+.v-site{background:#f6f3ec;padding:28px;display:grid;align-content:center;gap:10px;color:#1d2a14}
+.v-site .bar{font-family:var(--f-mono);font-size:11px;color:#6b6356;background:#e6e0d4;border-radius:8px;padding:6px 10px;justify-self:start}
+.v-site .h{font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.08}
+.v-site .row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.v-site .row div{background:#fff;border-radius:8px;padding:8px;font-size:11px;font-weight:700;min-width:0}
+.v-site .row div::before{content:"";display:block;aspect-ratio:1;border-radius:6px;margin-bottom:6px;background:linear-gradient(160deg,#9cc46a,#4f7a2a)}
+.v-site .row div:nth-child(2)::before{background:linear-gradient(160deg,#f2c14e,#e0503a)}
+.v-site .row div:nth-child(3)::before{background:linear-gradient(160deg,#f08a3a,#c9302c)}
+.v-site .row div:nth-child(4)::before{background:linear-gradient(160deg,#9cc46a 0 50%,#f2c14e 50%)}
+.v-site .pay{justify-self:start;font-size:12px;font-weight:700;background:#dfe8d2;color:var(--green);border-radius:999px;padding:3px 12px}
+.v-reel{background:linear-gradient(160deg,#a9cf74,#2f5a18);display:grid;place-items:center}
+.v-reel .ph{width:150px;aspect-ratio:9/16;border:3px solid #fff;border-radius:22px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;color:#fff;background:rgba(0,0,0,.12)}
+.v-reel .ph::before{content:"▶";position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);font-size:24px}
+.v-reel .ph b{font-size:12px;line-height:1.3}
+.v-reel .ph span{font-family:var(--f-mono);font-size:10px}
+.v-bars{background:var(--ink-2);padding:24px 24px 16px;display:flex;align-items:flex-end;gap:16px}
+.v-bars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;gap:6px;height:200px;min-width:0}
+.v-bars i{display:block;background:var(--paper);border-radius:6px 6px 0 0}
+.v-bars div:last-child i{background:var(--ok)}
+.v-bars b{font-family:var(--f-display);font-size:18px;font-weight:900;line-height:1}
+.v-bars span{font-size:11px;color:var(--mute);line-height:1.3}
+.v-more{background:var(--paper);color:var(--ink);display:grid;place-items:center;padding:28px}
+.v-more .stack{display:grid;gap:8px;text-align:center}
+.v-more .stack span{display:inline-block;background:var(--card);color:var(--paper);font-weight:900;padding:6px 14px;font-size:16px;justify-self:center}
+.v-more .stack span:nth-child(1){transform:rotate(-4deg)}
+.v-more .stack span:nth-child(2){transform:rotate(3deg);background:var(--ok);color:#fff}
+.v-more .stack span:nth-child(3){transform:rotate(-2deg)}
+.v-more .stack span:nth-child(4){transform:rotate(5deg)}
+.fine{color:var(--mute);font-size:13px;margin-top:18px}
+
+/* ── 方案、流程、聯絡 ── */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.plan{background:var(--card);border:1.5px dashed var(--line);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.plan.hot{border:1.5px solid var(--ok);position:relative}
+.plan .who{font-size:13px;color:var(--mute)}
+.plan h3{font-size:22px;font-weight:900}
+.plan .price{font-family:var(--f-display);font-weight:800;font-size:28px}
+.plan .price small{font-size:13px;color:var(--mute);font-weight:400;font-family:var(--f-tc)}
+.plan ul{margin:0;padding-left:18px;color:var(--mute);font-size:14px;display:grid;gap:4px;flex:1}
+.plan .btn{justify-content:center}
+.badge{align-self:flex-start;font-family:var(--f-mono);font-size:11px;background:var(--ok);color:#fff;border-radius:4px;padding:2px 8px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+@media (max-width:820px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+.flow div{padding:24px 20px 24px 0;border-bottom:1px solid var(--line);min-width:0}
+.flow .n{font-family:var(--f-display);font-weight:900;font-size:44px;color:transparent;-webkit-text-stroke:1px var(--ok);line-height:1}
+.flow b{display:block;margin:12px 0 4px;font-size:18px}
+.flow span{color:var(--mute);font-size:14px}
+.contact{border-top:1px solid var(--line)}
+.contact h2{font-family:var(--f-display);font-weight:900;font-size:clamp(52px,10vw,150px);line-height:.9;letter-spacing:-.04em}
+.contact h2 span{color:var(--ok)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px}
+@media (max-width:820px){.contact-grid{grid-template-columns:1fr}}
+form{display:grid;gap:12px}
+label{font-size:13px;color:var(--mute);display:grid;gap:6px}
+input,select,textarea{background:var(--card);border:1.5px solid var(--line);border-radius:10px;color:var(--paper);padding:12px 14px;font:inherit;font-size:15px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{display:inline-flex;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;color:var(--paper);cursor:pointer;font-size:14px}
+.chips input:checked+label{background:var(--ok);border-color:var(--ok);color:#fff}
+.chips input:focus-visible+label{outline:2px solid var(--ok);outline-offset:2px}
+.sent{color:var(--green);font-size:14px;min-height:1.4em;margin:0}
+.channels{display:grid;gap:12px;align-content:start}
+.channels div{background:var(--card);border:1.5px dashed var(--line);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.channels b{font-size:16px}
+.channels span{color:var(--mute);font-size:13px}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--mute);font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.msg,.thread,.btn,.work,.time,.finale{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">GMING <b>OK</b></a>
+    <div class="links">
+      <a href="#story">怎麼合作</a>
+      <a href="#works">作品集</a>
+      <a href="#plans">方案</a>
+      <a class="btn primary" href="#contact">傳訊息給我 ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 第一個 OK：滑鼠撥得動的粒子字 -->
+<header class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">GMING OK・設計 × 網站 × 行銷</p>
+    <h1>你說一聲，<br>我回你 <em>OK</em>。</h1>
+    <p class="lead">我是 GMING OK，設計師，也自己經營農產品牌。品牌、官網、金流、社群、Google 地標，你的想法丟過來，我把它做成真的能賣的東西。</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#story">往下滑，看一段對話 ↓</a>
+      <a class="btn" href="#works">直接看作品</a>
+    </div>
+  </div>
+  <p class="hint">MOVE YOUR CURSOR · 撥撥看</p>
+</header>
+
+<div class="path">
+  <div class="wrap">
+    <p class="eyebrow">從想法到訂單，我把這四步接成一條線</p>
+    <ol>
+      <li><span class="dot">01</span><b>品牌設計</b><span>名字、識別、包裝，先讓人記得你。</span></li>
+      <li><span class="dot">02</span><b>官網＋金流</b><span>手機好逛，綠界信用卡、ATM 直接付。</span></li>
+      <li><span class="dot">03</span><b>導流與行銷</b><span>IG、Threads、短影音、抽獎，把人帶進來。</span></li>
+      <li><span class="dot">04</span><b>Google 地標</b><span>附近的人搜得到，也看得到評價。</span></li>
+    </ol>
+    <p class="go">嘉作就是這樣一步一步走完的。<a href="#story">往下滑，看那段對話 ↓</a></p>
+  </div>
+</div>
+
+<!-- 聊天故事：最後所有 OK 聚成第二個 OK（對話泡泡） -->
+<section class="story" id="story" aria-label="一段合作對話">
+  <div class="stick">
+    <div class="side">
+      <p class="eyebrow">A REAL STORY · 嘉作</p>
+      <h2>一則訊息，<br>一家農產品牌。</h2>
+      <p>這是我幫嘉作做的事，用對話的方式重演一次。</p>
+    </div>
+    <div class="phone" id="phone">
+      <div class="phone-top">
+        <span class="av farm">嘉</span>
+        <div><b>嘉作｜蘆筍農家</b><span>嘉義新港・在線上</span></div>
+      </div>
+      <div class="screen" id="screen">
+        <div class="thread" id="thread">
+          <span class="time" data-s="0">上午 6:12</span>
+          <div class="msg them" data-s="0">你好～我家在嘉義新港種蘆筍跟甜椒，想在網路上自己賣，可以幫忙嗎？</div>
+          <div class="msg me" data-s="1" data-step="0"><span class="okw">OK</span> 先幫你們把品牌做出來。</div>
+          <div class="msg rich" data-s="1"><div class="r-brand"><strong>嘉作</strong><span>台語「作穡」，就是種田</span></div><div class="cap"><b>品牌命名＋識別</b>・一家人種的味道</div></div>
+          <div class="msg them" data-s="2">那客人看到要去哪裡買？</div>
+          <div class="msg me" data-s="3" data-step="1"><span class="okw">OK</span> 做一個手機好逛的官網，接綠界，信用卡、ATM 都能付。</div>
+          <div class="msg rich" data-s="3"><div class="r-site"><span class="url">chiazuo.com</span><span class="h">在嘉南平原<br>作穡。</span><span class="paid">✓ 付款成功・訂單成立</span></div><div class="cap"><b>官網＋綠界金流</b>・價格含運，自動寄信</div></div>
+          <div class="msg them" data-s="4">可是都沒人知道我們耶⋯</div>
+          <div class="msg me" data-s="5" data-step="2"><span class="okw">OK</span> IG、Threads 經營起來，我們去田裡拍採收。</div>
+          <div class="msg rich" data-s="5"><div class="r-reel"><div><strong>1,000,000+</strong><span>〈採收蘆筍：快、狠、準〉觀看</span></div></div><div class="cap"><b>短影音＋社群</b>・再加一波抽獎活動</div></div>
+          <div class="msg them" data-s="6">附近的人搜得到我們嗎？</div>
+          <div class="msg me" data-s="7" data-step="3"><span class="okw">OK</span> Google 地標建好，評論直接連到官網。</div>
+          <div class="msg rich" data-s="7"><div class="r-map"><span>嘉作 ★★★★★</span></div><div class="cap"><b>Google 商家地標</b>・口碑一眼看到</div></div>
+          <span class="time" data-s="8">下午 3:40</span>
+          <div class="msg them" data-s="8" data-step="4">剛剛又進來一筆訂單！！！</div>
+          <div class="msg sticker" data-s="9" aria-label="OK 手勢貼圖">👌</div>
+        </div>
+      </div>
+    </div>
+    <ol class="steps-list" id="steps">
+      <li><i>01</i>品牌</li>
+      <li><i>02</i>官網＋金流</li>
+      <li><i>03</i>社群＋短影音</li>
+      <li><i>04</i>Google 地標</li>
+      <li><i>05</i>訂單進來</li>
+    </ol>
+    <canvas id="okfield" aria-hidden="true"></canvas>
+    <div class="finale" id="finale">
+      <h2>每一句 <span style="color:var(--ok)">OK</span>，都變成一個成果。</h2>
+      <p>從一則訊息，到一門生意。</p>
+    </div>
+    <span class="scroll-cue" id="cue">SCROLL ↓ 往下滑看對話</span>
+  </div>
+</section>
+
+<section class="blk" id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>作品集</h2>
+      <p>網站、導流、行銷企劃，都是看得到數字的實際成果。</p>
+    </div>
+    <div class="works">
+      <article class="work big">
+        <div class="vis v-site" aria-hidden="true">
+          <span class="bar">chiazuo.com</span>
+          <span class="h">在嘉南平原<br>作穡。</span>
+          <div class="row"><div>綠蘆筍</div><div>甜椒</div><div>水果椒</div><div>混裝箱</div></div>
+          <span class="pay">✓ 綠界付款・黑貓冷藏寄出</span>
+        </div>
+        <div class="txt">
+          <span class="tag">WEB · E-COMMERCE · 導流</span>
+          <h3>嘉作｜農產品牌官網</h3>
+          <p>從品牌命名到官網上線，接綠界金流，用 LINE 社群通知開賣，讓一家人種的蘆筍與甜椒，有了自己的銷售通路。</p>
+          <ul><li>品牌識別</li><li>官網設計</li><li>綠界金流</li><li>LINE 社群導流</li><li>Google 評論</li></ul>
+          <a class="more" href="https://chiazuo.com" target="_blank" rel="noopener">看網站 chiazuo.com ↗</a>
+        </div>
+      </article>
+      <article class="work">
+        <div class="vis v-reel" aria-hidden="true"><div class="ph"><b>採收蘆筍：<br>快、狠、準</b><span>▶ 1M+ views</span></div></div>
+        <div class="txt">
+          <span class="tag">SOCIAL · SHORT VIDEO</span>
+          <h3>一蘆筍風｜社群與短影音</h3>
+          <p>經營 Instagram、Threads，把產地日常拍成短影音，搭配抽獎活動帶動互動。</p>
+          <div class="stat"><strong>100萬+</strong><span>單支 Reels 觀看</span></div>
+        </div>
+      </article>
+      <article class="work">
+        <div class="vis v-bars" aria-hidden="true">
+          <div><i style="height:30%"></i><b>3萬多</b><span>參與前</span></div>
+          <div><i style="height:85%"></i><b>10萬+</b><span>參與期間</span></div>
+          <div><i style="height:100%"></i><b>11.7萬</b><span>目前公開</span></div>
+        </div>
+        <div class="txt">
+          <span class="tag">SOCIAL · YOUTUBE · THREADS</span>
+          <h3>區塊先生｜社群經營</h3>
+          <p>與同事從零建立 Instagram 並接手經營，負責 Threads，參與 YouTube 內容與視覺製作。</p>
+          <div class="stat"><strong>3萬→10萬+</strong><span>YouTube 訂閱成長</span></div>
+        </div>
+      </article>
+      <article class="work big">
+        <div class="vis v-more" aria-hidden="true"><div class="stack"><span>品牌視覺</span><span>活動總籌</span><span>海報・包裝</span><span>短影片</span></div></div>
+        <div class="txt">
+          <span class="tag">MORE WORKS · 21 件</span>
+          <h3>更多設計作品</h3>
+          <p>識別設計、海報、包裝、社群視覺，以及活動企劃與整體總籌。</p>
+          <a class="more" href="https://gmingokdesign.netlify.app/" target="_blank" rel="noopener">看目前的作品集 ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="fine">公開帳號數據查核於 2026.10.22；百萬觀看數依本人提供。</p>
+  </div>
+</section>
+
+<section class="blk" id="plans" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>選一個起點</h2>
+      <p>一次做好、交到你手上。目前不接長期社群代操。</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <span class="who">剛起步、需要門面</span>
+        <h3>品牌形象網站</h3>
+        <div class="price"><small style="font-size:18px;color:var(--paper);font-weight:800">依需求報價</small></div>
+        <ul><li>5 頁內形象官網</li><li>手機版優化</li><li>網域與上線設定</li><li>Google 地標建立</li></ul>
+        <a class="btn" href="#contact">詢問這個方案</a>
+      </article>
+      <article class="plan hot">
+        <span class="badge">嘉作就是這個</span>
+        <span class="who">想在網路上直接賣東西</span>
+        <h3>電商開店一條龍</h3>
+        <div class="price"><small style="font-size:18px;color:var(--paper);font-weight:800">依需求報價</small></div>
+        <ul><li>品牌官網＋商品頁</li><li>綠界金流串接</li><li>訂單與出貨通知</li><li>Google 地標建立</li><li>社群起步包</li></ul>
+        <a class="btn primary" href="#contact">詢問這個方案 ↗</a>
+      </article>
+      <article class="plan">
+        <span class="who">已有網站或實體店</span>
+        <h3>單項加購</h3>
+        <div class="price"><small style="font-size:18px;color:var(--paper);font-weight:800">依項目報價</small></div>
+        <ul><li>Google 地標建立與優化</li><li>社群起步包</li><li>單支短影音</li><li>網站改版健檢</li></ul>
+        <a class="btn" href="#contact">詢問這個方案</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="blk" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>合作流程</h2><p>平均 3 到 6 週上線，每月只接 2 個案子。</p></div>
+    <div class="flow">
+      <div><div class="n">01</div><b>傳訊息聊聊</b><span>IG 私訊說說你的產品和想法。</span></div>
+      <div><div class="n">02</div><b>提案報價</b><span>頁面規劃、時程與明確報價，確認後開工。</span></div>
+      <div><div class="n">03</div><b>設計與開發</b><span>先看設計稿，再做網站與金流。</span></div>
+      <div><div class="n">04</div><b>上線與交接</b><span>教你更新，交接後 30 天內有問題可以問。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">YOUR TURN · 換你傳訊息了</p>
+    <h2>Let's make<br>it <span>OK.</span></h2>
+    <div class="contact-grid">
+      <form id="brief" novalidate>
+        <span style="font-size:13px;color:var(--mute)">你想做哪些？（可複選）</span>
+        <div class="chips">
+          <input type="checkbox" id="c-web"><label for="c-web">官網</label>
+          <input type="checkbox" id="c-shop"><label for="c-shop">電商金流</label>
+          <input type="checkbox" id="c-social"><label for="c-social">社群起步</label>
+          <input type="checkbox" id="c-video"><label for="c-video">短影音</label>
+          <input type="checkbox" id="c-map"><label for="c-map">Google 地標</label>
+        </div>
+        <label for="f-name">品牌或店名<input id="f-name" placeholder="例如：嘉作"></label>
+        <label for="f-msg">簡單說說你的需求<textarea id="f-msg" placeholder="賣什麼、想什麼時候上線、有沒有參考網站"></textarea></label>
+        <button class="btn primary" type="submit" style="justify-content:center">複製需求，IG 私訊我 ↗</button>
+        <p class="sent" id="sent" aria-live="polite"></p>
+      </form>
+      <div class="channels">
+        <div><span><b>Instagram 私訊</b><br>@gm.ok.design・最快回覆</span><a class="btn primary" href="https://www.instagram.com/gm.ok.design/" target="_blank" rel="noopener">私訊 ↗</a></div>
+        <div><span><b>實際案例</b><br>嘉作｜一蘆筍風 官網</span><a class="btn" href="https://chiazuo.com" target="_blank" rel="noopener">chiazuo.com ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 GMING OK · Visual Design & Good Ideas</span><span>品牌官網・電商金流・Google 地標</span></div></footer>
+
+<script>
+document.getElementById('brief').addEventListener('submit',e=>{
+  e.preventDefault();
+  const picks=[...document.querySelectorAll('.chips input:checked')].map(i=>i.nextElementSibling.textContent);
+  const txt=`你好！我想詢問：${picks.join('、')||'（還沒決定）'}\n品牌：${document.getElementById('f-name').value||'—'}\n需求：${document.getElementById('f-msg').value||'—'}`;
+  const done=()=>{document.getElementById('sent').textContent='OK！需求已複製，貼到 IG 私訊給我就可以了。';window.open('https://ig.me/m/gm.ok.design','_blank','noopener')};
+  (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(done,()=>{document.getElementById('sent').textContent='請把需求截圖或複製，私訊 IG @gm.ok.design。';});
+});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fontsReady=(document.fonts?Promise.all([document.fonts.ready,document.fonts.load('80px "Noto Color Emoji"','👌').catch(()=>{})]):Promise.resolve());
+
+/* 第一個 OK：粒子字 */
+(()=>{
+  const c=document.getElementById('field'),x=c.getContext('2d');
+  let W,H,pts=[],mouse={x:-9999,y:-9999},t=0,run=true;
+  function build(){
+    const dpr=Math.min(devicePixelRatio||1,2);
+    W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const o=document.createElement('canvas'),ox=o.getContext('2d');o.width=W;o.height=H;
+    const narrow=W<760,size=narrow?W*.62:Math.min(H*.6,W*.31);
+    ox.font=`900 ${size}px Archivo, sans-serif`;ox.textAlign='center';ox.textBaseline='middle';ox.fillStyle='#fff';
+    ox.fillText('OK',narrow?W*.5:W*.72,narrow?H*.8:H*.5);
+    const d=ox.getImageData(0,0,W,H).data,step=narrow?7:9;pts=[];
+    for(let y=0;y<H;y+=step)for(let X=0;X<W;X+=step){
+      const on=d[(y*W+X)*4+3]>128;
+      if(on||Math.random()<.02)pts.push({hx:X,hy:y,x:X+(Math.random()-.5)*500,y:y+(Math.random()-.5)*500,vx:0,vy:0,on,ph:Math.random()*6.28});
+    }
+  }
+  function frame(){
+    t+=.016;x.clearRect(0,0,W,H);
+    for(const p of pts){
+      const dx=p.x-mouse.x,dy=p.y-mouse.y,dd=dx*dx+dy*dy;
+      if(dd<16000){const f=(16000-dd)/16000*3.2,l=Math.sqrt(dd+1);p.vx+=dx/l*f;p.vy+=dy/l*f}
+      const hx=p.hx+(p.on?0:Math.sin(t*.6+p.ph)*18),hy=p.hy+(p.on?Math.sin(t+p.ph)*1.4:Math.cos(t*.5+p.ph)*18);
+      p.vx+=(hx-p.x)*.03;p.vy+=(hy-p.y)*.03;p.vx*=.86;p.vy*=.86;p.x+=p.vx;p.y+=p.vy;
+      const sp=Math.min(1,Math.hypot(p.vx,p.vy)/6);
+      x.fillStyle=p.on?`rgba(232,85,58,${.6+.4*Math.sin(t*1.4+p.ph)**2})`:'rgba(28,28,27,.22)';
+      const r=p.on?2.4+sp*2:1.2;x.fillRect(p.x-r/2,p.y-r/2,r,r);
+    }
+    if(run&&!reduce)requestAnimationFrame(frame);
+  }
+  const hero=document.getElementById('top');
+  hero.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+  hero.addEventListener('pointerleave',()=>{mouse.x=mouse.y=-9999});
+  new IntersectionObserver(([en])=>{const was=run;run=en.isIntersecting;if(run&&!was&&!reduce)frame()}).observe(hero);
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{build();if(reduce){pts.forEach(p=>{p.x=p.hx;p.y=p.hy});frame()}},150)});
+  fontsReady.then(()=>{build();if(reduce)pts.forEach(p=>{p.x=p.hx;p.y=p.hy});frame()});
+})();
+
+/* 聊天故事＋第二個 OK：所有「OK」聚成一個對話泡泡，中間是橘色 OK */
+(()=>{
+  const story=document.getElementById('story'),thread=document.getElementById('thread'),screen=document.getElementById('screen');
+  const phone=document.getElementById('phone'),finale=document.getElementById('finale'),cue=document.getElementById('cue');
+  const items=[...thread.querySelectorAll('[data-s]')],steps=[...document.querySelectorAll('#steps li')];
+  const cv=document.getElementById('okfield'),cx=cv.getContext('2d');
+  const STAGES=10;let shown=-1,W,H,chips=[];
+  function sampleHand(){
+    const dpr=Math.min(devicePixelRatio||1,2);
+    W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+    const bw=Math.min(W*.84,640),bh=bw*.56,bx=(W-bw)/2,by=H*.42-bh/2,rad=bh*.32;
+    const mk=()=>{const o=document.createElement('canvas');o.width=W;o.height=H;return o};
+    const ob=mk(),b=ob.getContext('2d');
+    b.beginPath();b.moveTo(bx+rad,by);b.arcTo(bx+bw,by,bx+bw,by+bh,rad);b.arcTo(bx+bw,by+bh,bx,by+bh,rad);
+    b.lineTo(bx+bw*.3,by+bh);b.lineTo(bx+bw*.14,by+bh+bh*.26);b.lineTo(bx+bw*.17,by+bh);
+    b.arcTo(bx,by+bh,bx,by,rad);b.arcTo(bx,by,bx+bw,by,rad);b.closePath();b.fillStyle='#fff';b.fill();
+    const ol=mk(),l=ol.getContext('2d');
+    l.font=`900 ${bh*.7}px Archivo, sans-serif`;l.textAlign='center';l.textBaseline='middle';l.fillStyle='#fff';l.fillText('OK',W/2,by+bh*.54);
+    const db=b.getImageData(0,0,W,H).data,dl=l.getImageData(0,0,W,H).data,sy=W<600?11:13,sx=sy*1.45;chips=[];
+    for(let y=0;y<H;y+=sy)for(let X=0;X<W;X+=sx){
+      const xx=X+((y/sy)%2?sx/2:0),i=(Math.floor(y)*W+Math.floor(xx))*4;
+      if(db[i+3]>140){const a=Math.random()*6.28,R=Math.max(W,H)*(.55+Math.random()*.5);
+        chips.push({hx:xx,hy:y,sx:W/2+Math.cos(a)*R,sy:H/2+Math.sin(a)*R,rot:(Math.random()-.5)*1.4,hot:dl[i+3]>140,del:Math.random()*.35});}
+    }
+  }
+  const ease=q=>1-Math.pow(1-q,3);
+  function drawHand(q){
+    cx.clearRect(0,0,W,H);if(q<=0)return;
+    const fs=W<600?8:10;cx.textAlign='center';cx.textBaseline='middle';
+    for(const c of chips){
+      const k=ease(Math.min(1,Math.max(0,(q-c.del)/(1-c.del))));
+      const px=c.sx+(c.hx-c.sx)*k,py=c.sy+(c.hy-c.sy)*k;
+      cx.save();cx.translate(px,py);cx.rotate(c.rot*(1-k));cx.globalAlpha=Math.min(1,k*1.6);
+      cx.font=`${c.hot?900:700} ${fs}px Archivo, sans-serif`;cx.fillStyle=c.hot?'#e8553a':(k>.98?'#a9a9a4':'#8e8e89');cx.fillText('OK',0,0);cx.restore();
+    }
+  }
+  function update(){
+    const r=story.getBoundingClientRect(),total=r.height-innerHeight;
+    const p=reduce&&r.top>innerHeight?0:Math.min(1,Math.max(0,-r.top/total));
+    const chatP=Math.min(1,p/.72),n=Math.min(STAGES-1,Math.floor(chatP*STAGES+.35));
+    if(n!==shown){
+      shown=n;let last=null;
+      for(const el of items){const on=+el.dataset.s<=n;el.classList.toggle('show',on);if(on)last=el}
+      const stepNow=Math.max(...items.filter(el=>el.dataset.step&&+el.dataset.s<=n).map(el=>+el.dataset.step),-1);
+      steps.forEach((li,i)=>li.classList.toggle('on',i<=stepNow));
+      if(last){const bottom=last.offsetTop+last.offsetHeight+20;thread.style.transform=`translateY(${Math.min(0,screen.clientHeight-bottom)}px)`}
+    }
+    const q=Math.min(1,Math.max(0,(p-.76)/.2));
+    phone.style.opacity=1-q*.97;phone.style.transform=`scale(${1-q*.06})`;
+    finale.classList.toggle('show',q>.92);cue.style.opacity=p<.02?1:0;
+    drawHand(q);
+  }
+  let ticking=false;addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{ticking=false;update()})}},{passive:true});
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{sampleHand();shown=-1;update()},150)});
+  fontsReady.then(()=>{sampleHand();update()});
+  update();
+})();
+</script>
+
+</body>
+</html>
